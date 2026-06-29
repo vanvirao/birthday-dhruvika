@@ -1,11 +1,14 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Disc3, Play, Pause, SkipBack, SkipForward, Music2 } from 'lucide-react';
+import {  Disc3,  Play,  Pause,  SkipBack,  SkipForward,  Music2,Shuffle,} from 'lucide-react';
+import { Repeat } from 'lucide-react';
 import astronomy from '../../assets/music/Conan Gray - Astronomy.mp3';
 import eighteen from '../../assets/music/One Direction - 18 (Audio).mp3';
 import invisibleString from '../../assets/music/Taylor Swift  invisible string.mp3';
 import theParty from '../../assets/music/The Weeknd - The Party & The After Party.mp3';
-
+import darkhaast from '../../assets/music/DARKHAAST.mp3';
+import fineLine from '../../assets/music/Fine Line.mp3';
+import defenceless from '../../assets/music/Defenceless.mp3';
 interface Track {
   id: number;
   title: string;
@@ -20,6 +23,9 @@ const tracks: Track[] = [
   { id: 2, title: 'Invisible String', artist: 'Taylor Swift', duration: '4:14', audioUrl: invisibleString },
   { id: 3, title: 'Astronomy', artist: 'Conan Gray', duration: '4:04', audioUrl: astronomy },
   { id: 4, title: 'The Party & The After Party', artist: 'The Weeknd', duration: '7:44', audioUrl: theParty },
+  { id: 5, title: 'Darkhaast', artist: 'Arijit Singh & Sunidhi Chauhan', duration: '6:15', audioUrl: darkhaast },
+  { id: 6, title: 'Fine Line', artist: 'Harry Styles', duration: '6:20', audioUrl: fineLine },
+  { id: 7, title: 'Defenceless', artist: 'Louis Tomlinson', duration: '3:59', audioUrl: defenceless },
 ];
 
 function formatTime(sec: number) {
@@ -117,11 +123,15 @@ function Waveform({
       })}
     </div>
   );
+  
 }
 
 export default function MixtapeApp() {
   const [selectedTrack, setSelectedTrack] = useState<Track>(tracks[0]);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [shouldAutoPlay, setShouldAutoPlay] = useState(false);
+  const [shuffle, setShuffle] = useState(false);
+  const [repeat, setRepeat] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [peaks, setPeaks] = useState<number[] | null>(null);
@@ -143,23 +153,45 @@ export default function MixtapeApp() {
       .catch((err) => console.error('Waveform decode failed:', err))
       .finally(() => setPeaksLoading(false));
   }, [selectedTrack.audioUrl]);
+  useEffect(() => {
+  if (
+    shouldAutoPlay &&
+    audioRef.current &&
+    selectedTrack.audioUrl
+  ) {
+    audioRef.current.play().catch(() => {});
+  }
+}, [selectedTrack, shouldAutoPlay]);
 
   const playNext = useCallback(() => {
-    const idx = tracks.findIndex((t) => t.id === selectedTrack.id);
-    setSelectedTrack(tracks[(idx + 1) % tracks.length]);
-  }, [selectedTrack]);
+  if (shuffle) {
+    const random = Math.floor(Math.random() * tracks.length);
+    setShouldAutoPlay(true);
+    setSelectedTrack(tracks[random]);
+    return;
+  }
+
+  const idx = tracks.findIndex((t) => t.id === selectedTrack.id);
+  setSelectedTrack(tracks[(idx + 1) % tracks.length]);
+}, [selectedTrack, shuffle]);
 
   const playPrev = useCallback(() => {
     const idx = tracks.findIndex((t) => t.id === selectedTrack.id);
     setSelectedTrack(tracks[(idx - 1 + tracks.length) % tracks.length]);
+    setShouldAutoPlay(true);
   }, [selectedTrack]);
 
   const handlePlayPause = useCallback(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    if (isPlaying) audio.pause();
-    else audio.play();
-  }, [isPlaying]);
+  const audio = audioRef.current;
+  if (!audio) return;
+
+  if (isPlaying) {
+    audio.pause();
+  } else {
+    setShouldAutoPlay(true);
+    audio.play();
+  }
+}, [isPlaying]);
 
   const handleSeek = useCallback(
     (fraction: number) => {
@@ -182,7 +214,14 @@ export default function MixtapeApp() {
           onPause={() => setIsPlaying(false)}
           onTimeUpdate={(e) => setCurrentTime(e.currentTarget.currentTime)}
           onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
-          onEnded={playNext}
+          onEnded={() => {
+  if (repeat && audioRef.current) {
+    audioRef.current.currentTime = 0;
+    audioRef.current.play();
+  } else {
+    playNext();
+  }
+}}
         />
       )}
 
@@ -244,23 +283,78 @@ export default function MixtapeApp() {
               {/* Track Info */}
               <div className="text-center mb-5">
                 <button
-                  onClick={handlePlayPause}
-                  disabled={!hasAudio}
-                  aria-label={isPlaying ? 'Pause' : 'Play'}
-                  className="relative w-20 h-20 rounded-2xl bg-[var(--sky-accent)] flex items-center justify-center text-white mx-auto mb-3 cursor-pointer hover:brightness-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed group"
-                >
-                  <Disc3
-                    className={`w-9 h-9 ${isPlaying ? 'animate-spin' : ''}`}
-                    style={isPlaying ? { animationDuration: '3s' } : undefined}
-                  />
-                  <div className="absolute inset-0 rounded-2xl bg-black/0 group-hover:bg-black/10 flex items-center justify-center transition-colors">
-                    {isPlaying ? (
-                      <Pause className="w-7 h-7 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    ) : (
-                      <Play className="w-7 h-7 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    )}
-                  </div>
-                </button>
+  onClick={handlePlayPause}
+  disabled={!hasAudio}
+  aria-label={isPlaying ? 'Pause' : 'Play'}
+  className="relative mx-auto mb-3 cursor-pointer group"
+>
+  <motion.div
+    animate={{
+      rotate: isPlaying ? 360 : 0,
+      scale: isPlaying ? [1, 1.03, 1] : 1,
+    }}
+    transition={{
+      rotate: {
+        duration: 10,
+        repeat: Infinity,
+        ease: "linear",
+      },
+      scale: {
+        duration: 2,
+        repeat: Infinity,
+      },
+    }}
+    className="relative w-24 h-24"
+  >
+    <div
+  className="absolute inset-0 rounded-full"
+  style={{
+    background:
+      "radial-gradient(circle at 30% 30%, #F7E8B8 0%, #D7B15C 70%, #B68A34 100%)",
+    boxShadow: "0 0 30px rgba(193,145,63,.45)",
+  }}
+/>
+<div
+  className="absolute rounded-full"
+  style={{
+    width: 16,
+    height: 16,
+    top: 18,
+    left: 50,
+    background: "rgba(0,0,0,.08)",
+  }}
+/>
+
+<div
+  className="absolute rounded-full"
+  style={{
+    width: 10,
+    height: 10,
+    top: 52,
+    left: 28,
+    background: "rgba(0,0,0,.06)",
+  }}
+/>
+
+<div
+  className="absolute rounded-full"
+  style={{
+    width: 8,
+    height: 8,
+    top: 60,
+    left: 58,
+    background: "rgba(0,0,0,.05)",
+  }}
+/>
+<div className="absolute inset-0 flex items-center justify-center">
+  {isPlaying ? (
+    <Pause className="w-7 h-7 text-[#11284F]" />
+  ) : (
+    <Play className="w-7 h-7 ml-1 text-[#11284F]" fill="currentColor" />
+  )}
+</div>
+  </motion.div>
+</button>
                 <h3 className="text-base font-semibold text-[#1D1D1F]">{selectedTrack.title}</h3>
                 <p className="text-sm text-[#6E6E73] mt-0.5">{selectedTrack.artist}</p>
               </div>
@@ -273,12 +367,23 @@ export default function MixtapeApp() {
                     </div>
                   ) : (
                     <Waveform peaks={peaks} progress={progress} onSeek={handleSeek} accent="var(--sky-accent)" />
+                    
                   )}
                   <div className="flex items-center justify-between mt-1 text-[11px] text-[#6E6E73] font-mono">
                     <span>{formatTime(currentTime)}</span>
                     <span>{formatTime(duration)}</span>
                   </div>
                   <div className="flex items-center justify-center gap-6 mt-4">
+                    <button
+  onClick={() => setShuffle(!shuffle)}
+  className={`cursor-pointer transition-colors ${
+    shuffle
+      ? 'text-[var(--sky-accent)]'
+      : 'text-[#6E6E73]'
+  }`}
+>
+  <Shuffle className="w-4 h-4" />
+</button>
                     <button
                       onClick={playPrev}
                       aria-label="Previous track"
@@ -304,6 +409,13 @@ export default function MixtapeApp() {
                     >
                       <SkipForward className="w-5 h-5" fill="currentColor" />
                     </button>
+                    <button
+  onClick={() => setRepeat(!repeat)}
+  className={repeat ? 'text-[var(--sky-accent)]' : 'text-[#6E6E73]'}
+>
+  <Repeat className="w-5 h-5" />
+</button>
+
                   </div>
                 </div>
               ) : (
