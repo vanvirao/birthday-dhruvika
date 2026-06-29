@@ -1,6 +1,25 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Images, Download, Loader2 } from 'lucide-react';
+import photo1 from '../../assets/memories/photo1.jpeg';
+import photo2 from '../../assets/memories/photo2.jpeg';
+import photo3 from '../../assets/memories/photo3.jpeg';
+import photo4 from '../../assets/memories/photo4.jpeg';
+import photo5 from '../../assets/memories/photo5.jpeg';
+import photo6 from '../../assets/memories/photo6.jpeg';
+import photo7 from '../../assets/memories/photo7.jpeg';
+import photo8 from '../../assets/memories/photo8.jpeg';
+import photo9 from '../../assets/memories/photo9.jpeg';
+import photo10 from '../../assets/memories/photo10.jpeg';
+import photo11 from '../../assets/memories/photo11.jpeg';
+import photo12 from '../../assets/memories/photo12.jpeg';
+import photo13 from '../../assets/memories/photo13.jpeg';
+import photo14 from '../../assets/memories/photo14.jpeg';
+import photo15 from '../../assets/memories/photo15.jpeg';
+import photo16 from '../../assets/memories/photo16.jpeg';
+import photo17 from '../../assets/memories/photo17.jpeg';
+import photo18 from '../../assets/memories/photo18.jpeg';
+import photo19 from '../../assets/memories/photo19.jpeg';
 
 interface Photo {
   id: number;
@@ -9,26 +28,26 @@ interface Photo {
 }
 
 const photos: Photo[] = [
-  { id: 1,  src: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400&h=300&fit=crop', caption: '[Caption — replace with the real memory]' },
-  { id: 2,  src: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400&h=300&fit=crop', caption: '[Caption — replace with the real memory]' },
-  { id: 3,  src: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&h=300&fit=crop', caption: '[Caption — replace with the real memory]' },
-  { id: 4,  src: 'https://images.unsplash.com/photo-1543807535-eceef0bc6599?w=400&h=300&fit=crop', caption: '[Caption — replace with the real memory]' },
-  { id: 5,  src: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=300&fit=crop', caption: '[Caption — replace with the real memory]' },
-  { id: 6,  src: 'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=400&h=300&fit=crop', caption: '[Caption — replace with the real memory]' },
-  { id: 7,  src: 'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=400&h=300&fit=crop', caption: '[Caption — replace with the real memory]' },
-  { id: 8,  src: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&h=300&fit=crop', caption: '[Caption — replace with the real memory]' },
+  { id: 1,  src: photo1, caption: '[Caption — replace with the real memory]' },
+  { id: 2,  src: photo2, caption: '[Caption — replace with the real memory]' },
+  { id: 3,  src: photo3, caption: '[Caption — replace with the real memory]' },
+  { id: 4,  src: photo4, caption: '[Caption — replace with the real memory]' },
+  { id: 5,  src: photo5, caption: '[Caption — replace with the real memory]' },
+  { id: 6,  src: photo6, caption: '[Caption — replace with the real memory]' },
+  { id: 7,  src: photo7, caption: '[Caption — replace with the real memory]' },
+  { id: 8,  src: photo8, caption: '[Caption — replace with the real memory]' },
 
-  { id: 9,  src: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400&h=300&fit=crop', caption: '[Caption — replace with the real memory]' },
-  { id: 10, src: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=300&fit=crop', caption: '[Caption — replace with the real memory]' },
-  { id: 11, src: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=300&fit=crop', caption: '[Caption — replace with the real memory]' },
-  { id: 12, src: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=400&h=300&fit=crop', caption: '[Caption — replace with the real memory]' },
-  { id: 13, src: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=300&fit=crop', caption: '[Caption — replace with the real memory]' },
-  { id: 14, src: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=300&fit=crop', caption: '[Caption — replace with the real memory]' },
-  { id: 15, src: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=300&fit=crop', caption: '[Caption — replace with the real memory]' },
-  { id: 16, src: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&h=300&fit=crop', caption: '[Caption — replace with the real memory]' },
-  { id: 17, src: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=400&h=300&fit=crop', caption: '[Caption — replace with the real memory]' },
-  { id: 18, src: 'https://images.unsplash.com/photo-1492447166138-50c3889fccb1?w=400&h=300&fit=crop', caption: '[Caption — replace with the real memory]' },
-  { id: 19, src: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=300&fit=crop', caption: '[Caption — replace with the real memory]' },
+  { id: 9,  src: photo9, caption: '[Caption — replace with the real memory]' },
+  { id: 10, src: photo10, caption: '[Caption — replace with the real memory]' },
+  { id: 11, src: photo11, caption: '[Caption — replace with the real memory]' },
+  { id: 12, src: photo12, caption: '[Caption — replace with the real memory]' },
+  { id: 13, src: photo13, caption: '[Caption — replace with the real memory]' },
+  { id: 14, src: photo14, caption: '[Caption — replace with the real memory]' },
+  { id: 15, src: photo15, caption: '[Caption — replace with the real memory]' },
+  { id: 16, src: photo16, caption: '[Caption — replace with the real memory]' },
+  { id: 17, src: photo17, caption: '[Caption — replace with the real memory]' },
+  { id: 18, src: photo18, caption: '[Caption — replace with the real memory]' },
+  { id: 19, src: photo19, caption: '[Caption — replace with the real memory]' },
 ];
 
 // Draws the photo + a white polaroid border + caption onto an offscreen
