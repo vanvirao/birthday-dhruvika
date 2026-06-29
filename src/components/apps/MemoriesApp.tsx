@@ -85,7 +85,7 @@ async function exportPolaroid(photo: Photo) {
   ctx.drawImage(img, padding, padding, photoW, photoH);
 
   ctx.fillStyle = '#3A3A3A';
-  ctx.font = '22px "Segoe Script", "Brush Script MT", cursive, sans-serif';
+  ctx.font = '22px "Quicksand", "Bellefair", cursive, sans-serif';
   ctx.textAlign = 'center';
   ctx.fillText(
     photo.caption.replace(/^\[|\]$/g, ''),
