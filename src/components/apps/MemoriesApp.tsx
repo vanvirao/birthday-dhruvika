@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Images, Download, Loader2 } from 'lucide-react';
-import photo1 from "../../assets/memories/photo1.jpg";
 
 interface Photo {
   id: number;
@@ -10,7 +9,7 @@ interface Photo {
 }
 
 const photos: Photo[] = [
-  { id: 1,  src: photo1, caption: '[Caption — replace with the real memory]' },
+  { id: 1,  src: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400&h=300&fit=crop', caption: '[Caption — replace with the real memory]' },
   { id: 2,  src: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400&h=300&fit=crop', caption: '[Caption — replace with the real memory]' },
   { id: 3,  src: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&h=300&fit=crop', caption: '[Caption — replace with the real memory]' },
   { id: 4,  src: 'https://images.unsplash.com/photo-1543807535-eceef0bc6599?w=400&h=300&fit=crop', caption: '[Caption — replace with the real memory]' },
