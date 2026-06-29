@@ -6,9 +6,7 @@ import {
   Gamepad2,
   Disc3,
   Settings,
-  Mail,
   Heart,
-  Star,
   Gift,
   MessageCircle,
   Terminal,
@@ -36,13 +34,12 @@ export const apps: DockApp[] = [
   { id: 'mixtape',  name: 'Mixtape',      icon: <Disc3           className="w-full h-full" />, color: '#1A3A6A' },
   { id: 'terminal', name: 'Terminal',     icon: <Terminal        className="w-full h-full" />, color: '#1A3A2A' },
   { id: 'messages', name: 'Messages',     icon: <MessageCircle   className="w-full h-full" />, color: '#234A7A' },
-  { id: 'mail',     name: 'Mail',         icon: <Mail            className="w-full h-full" />, color: '#0D1840' },
   { id: 'wishlist', name: 'Wishlist',     icon: <Gift            className="w-full h-full" />, color: '#7A4A1A' },
   { id: 'favorites',name: 'Favorites',    icon: <Heart           className="w-full h-full" />, color: '#9A3A2A' },
   { id: 'settings', name: 'Settings',     icon: <Settings        className="w-full h-full" />, color: '#2A3A5A' },
 ];
 
-const MOBILE_IDS = ['memories', 'notes', 'jokes', 'mixtape', 'messages', 'mail', 'settings','wishlist'];
+const MOBILE_IDS = ['memories', 'notes', 'jokes', 'mixtape', 'messages', 'settings','wishlist'];
 
 function DockIcon({
   app,
