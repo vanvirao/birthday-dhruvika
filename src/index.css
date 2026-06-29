@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS Custom Properties — default: Moon theme ────────────────────────── */
+:root {
+  --sky-deep:           #000C25;
+  --sky-mid:            #11284F;
+  --sky-accent:         #C1913F;
+  --sky-light:          #EFE5D2;
+  --sky-cream:          #F3E8C8;
+  --sky-shadow:         #0D0D0D;
+  --sky-surface:        rgba(17, 40, 79, 0.65);
+  --sky-surface-hover:  rgba(17, 40, 79, 0.80);
+  --sky-border:         rgba(239, 229, 210, 0.12);
+  --sky-text:           #EFE5D2;
+  --sky-text-secondary: rgba(239, 229, 210, 0.55);
+  --sky-moon-color:     #F5E6C0;
+  --sky-star-opacity:   1;
+}
+
+/* ── Base Reset ─────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  background: var(--sky-deep);
+}
+
+/* ── Keyboard Focus Rings ───────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--sky-accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--sky-accent);
+  outline-offset: 2px;
+}
+
+/* ── Reduced Motion ─────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration:        0.001ms !important;
+    animation-iteration-count: 1       !important;
+    transition-duration:       0.001ms !important;
+  }
+}
+
+/* ── Utilities ──────────────────────────────────────────────────────────── */
+@keyframes progress {
+  0%   { width: 0%; }
+  100% { width: 100%; }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50%       { opacity: 0.8; }
+}
+
+@keyframes constellation-fade {
+  0%   { opacity: 0; transform: translateY(4px); }
+  15%  { opacity: 1; transform: translateY(0); }
+  75%  { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-4px); }
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width:    none;
+}
+
+/* Glass surface helper — applies theme vars automatically */
+.glass {
+  background:       var(--sky-surface);
+  backdrop-filter:  blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid var(--sky-border);
+  color:  var(--sky-text);
+}
+
+.glass-hover:hover {
+  background: var(--sky-surface-hover);
+}
