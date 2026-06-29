@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Moon } from 'lucide-react';
+// import { Moon } from 'lucide-react';
 import { sound } from '../lib/sound';
 import { usePrefersReducedMotion } from '../lib/usePrefersReducedMotion';
 
