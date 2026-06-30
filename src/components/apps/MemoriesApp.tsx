@@ -163,7 +163,7 @@ export default function MemoriesApp() {
             onClick={() => setSelectedPhoto(null)}
           >
             <motion.div
-              className="relative max-w-2xl w-full"
+  className="relative w-auto max-w-[90vw] max-h-[90vh] flex flex-col items-center"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
@@ -190,14 +190,21 @@ export default function MemoriesApp() {
                 )}
                 {exporting ? 'Saving…' : 'Save'}
               </button>
-              <img
-                src={selectedPhoto.src}
-                alt={selectedPhoto.caption}
-                className="w-full rounded-xl shadow-2xl"
-              />
-              <p className="text-white text-sm text-center mt-4 font-medium">
-                {selectedPhoto.caption}
-              </p>
+              <div className="flex flex-col items-center max-h-[90vh]">
+  <img
+  src={selectedPhoto.src}
+  alt={selectedPhoto.caption}
+  style={{
+    maxHeight: '330px',
+    width: 'auto',
+    objectFit: 'contain',
+  }}
+/>
+
+  <p className="text-white text-sm text-center mt-4 font-medium px-4">
+    {selectedPhoto.caption}
+  </p>
+</div>
             </motion.div>
           </motion.div>
         )}
