@@ -1,7 +1,7 @@
 import { useRef, useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { DockApp } from './Dock';
-import { MemoriesApp, NotesApp, InsideJokesApp, MixtapeApp, TerminalApp, WishlistApp } from './apps';
+import { MemoriesApp, NotesApp, InsideJokesApp, MixtapeApp, TerminalApp, WishlistApp, MessagesApp } from './apps';
 import SettingsApp from './apps/SettingsApp';
 import { usePrefersReducedMotion } from '../lib/usePrefersReducedMotion';
 import { useMinimizedWindows } from '../lib/MinimizedWindowsContext';
@@ -214,7 +214,8 @@ export default function Window({ app, onClose, onFocus, isActive, zIndex }: Wind
             {app.id === 'terminal' && <TerminalApp />}
             {app.id === 'settings' && <SettingsApp />}
             {app.id === 'wishlist' && <WishlistApp />}
-            {!['memories', 'notes', 'jokes', 'mixtape', 'terminal', 'settings'].includes(app.id) && (
+            {app.id === 'messages' && <MessagesApp />}
+            {!['memories', 'notes', 'jokes', 'mixtape', 'terminal', 'settings', 'messages'].includes(app.id) && (
               <div className="p-6 h-full flex flex-col items-center justify-center text-center">
                 <div
                   className="w-16 h-16 rounded-2xl flex items-center justify-center text-white mb-4"

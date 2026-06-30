@@ -4,3 +4,4 @@ export { default as InsideJokesApp } from './InsideJokesApp';
 export { default as MixtapeApp } from './MixtapeApp';
 export { default as TerminalApp } from './TerminalApp';
 export { default as WishlistApp } from './WishlistApp';
+export { default as MessagesApp } from './MessagesApp';

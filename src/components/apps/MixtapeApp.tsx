@@ -9,6 +9,9 @@ import theParty from '../../assets/music/The Weeknd - The Party & The After Part
 import darkhaast from '../../assets/music/DARKHAAST.mp3';
 import fineLine from '../../assets/music/Fine Line.mp3';
 import defenceless from '../../assets/music/Defenceless.mp3';
+import bird2 from '../../assets/music/Bird2.mp3';
+import angelsFly from '../../assets/music/Angels.mp3';
+import pp from '../../assets/music/pp.mp3';
 interface Track {
   id: number;
   title: string;
@@ -19,13 +22,16 @@ interface Track {
 }
 
 const tracks: Track[] = [
-  { id: 1, title: 'Eighteen', artist: 'One Direction', duration: '4:09', audioUrl: eighteen },
+  { id: 1, title: '18', artist: 'One Direction', duration: '4:09', audioUrl: eighteen },
   { id: 2, title: 'Invisible String', artist: 'Taylor Swift', duration: '4:14', audioUrl: invisibleString },
   { id: 3, title: 'Astronomy', artist: 'Conan Gray', duration: '4:04', audioUrl: astronomy },
   { id: 4, title: 'The Party & The After Party', artist: 'The Weeknd', duration: '7:44', audioUrl: theParty },
   { id: 5, title: 'Darkhaast', artist: 'Arijit Singh & Sunidhi Chauhan', duration: '6:15', audioUrl: darkhaast },
-  { id: 6, title: 'Fine Line', artist: 'Harry Styles', duration: '6:20', audioUrl: fineLine },
   { id: 7, title: 'Defenceless', artist: 'Louis Tomlinson', duration: '3:59', audioUrl: defenceless },
+  { id: 6, title: 'Fine Line', artist: 'Harry Styles', duration: '6:20', audioUrl: fineLine },  
+  { id: 8, title: 'The Birds (Part 2)', artist: 'The Weeknd', duration: '5:56', audioUrl: bird2 },
+  { id: 9, title: 'Angels Fly', artist: 'Louis Tomlinson', duration: '3:38', audioUrl: angelsFly },
+  { id: 10, title: 'Proper Patola', artist: 'Badshah, Diljit & Aastha', duration: '3:01', audioUrl: pp },
 ];
 
 function formatTime(sec: number) {
