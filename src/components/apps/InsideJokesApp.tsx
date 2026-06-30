@@ -56,7 +56,7 @@ export default function InsideJokesApp() {
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [isCorrect, setIsCorrect] = useState(false);
 
-  const current = questions[currentIndex];
+  const current = questions[currentIndex]!;
 
   const handleAnswer = (index: number) => {
     if (answered) return;
