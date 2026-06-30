@@ -7,7 +7,7 @@ import photo3 from '../../assets/memories/photo3.jpeg';
 import photo4 from '../../assets/memories/photo4.jpeg';
 import photo5 from '../../assets/memories/photo5.jpeg';
 import photo6 from '../../assets/memories/photo6.jpeg';
-import photo7 from '../../assets/memories/[ohoto7.jpeg';
+import photo7 from '../../assets/memories/photo7.jpeg';
 import photo8 from '../../assets/memories/photo8.jpeg';
 import photo9 from '../../assets/memories/photo9.jpeg';
 import photo10 from '../../assets/memories/photo10.jpeg';
@@ -17,7 +17,7 @@ import photo13 from '../../assets/memories/photo13.jpeg';
 import photo14 from '../../assets/memories/photo14.jpeg';
 import photo15 from '../../assets/memories/photo15.jpeg';
 import photo16 from '../../assets/memories/photo16.jpeg';
-import photo17 from '../../assets/memories/photo27.jpeg';
+import photo17 from '../../assets/memories/photo17.jpeg';
 import photo18 from '../../assets/memories/photo18.jpeg';
 import photo19 from '../../assets/memories/photo19.jpeg';
 
