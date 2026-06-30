@@ -1,4 +1,4 @@
- bimport { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Gamepad2, CheckCircle2, XCircle, ArrowRight } from 'lucide-react';
 
@@ -14,7 +14,7 @@ interface JokeQuestion {
 const questions: JokeQuestion[] = [
   {
     id: 1,
-    clue: 'you want it? you like it?'
+    clue: 'you want it? you like it?',
     options: ['keep it bro', 'keeeeeeeep it bro', 'i miss my ex'],
     correctIndex: 1,
     correctReaction: 'you da real art',
@@ -31,12 +31,15 @@ const questions: JokeQuestion[] = [
   {
     id: 3,
     clue: 'vanvis favourite ship-',
-    options: ['harry potter and draco malfoy', 'dhruvika and mudit', 'laung laachi'],
+    options: [
+      'harry potter and draco malfoy',
+      'dhruvika and mudit',
+      'laung laachi',
+    ],
     correctIndex: 2,
     correctReaction: 'vanvi is lame right?',
     wrongReaction: 'ehhh wrong',
   },
-
   {
     id: 4,
     clue: 'dhruvika say it',
@@ -57,6 +60,7 @@ export default function InsideJokesApp() {
 
   const handleAnswer = (index: number) => {
     if (answered) return;
+
     setSelectedOption(index);
     setIsCorrect(index === current.correctIndex);
     setAnswered(true);
@@ -74,8 +78,12 @@ export default function InsideJokesApp() {
       {/* Header */}
       <div className="flex items-center gap-2 px-4 py-2.5 border-b border-black/5">
         <Gamepad2 className="w-4 h-4 text-[#5B8DEF]" />
-        <span className="text-xs font-semibold text-[#1D1D1F]">Inside Jokes</span>
-        <span className="text-xs text-[#6E6E73] ml-auto">{currentIndex + 1} / {questions.length}</span>
+        <span className="text-xs font-semibold text-[#1D1D1F]">
+          Inside Jokes
+        </span>
+        <span className="text-xs text-[#6E6E73] ml-auto">
+          {currentIndex + 1} / {questions.length}
+        </span>
       </div>
 
       {/* Quiz Area */}
@@ -108,6 +116,7 @@ export default function InsideJokesApp() {
                   <motion.button
                     key={index}
                     onClick={() => handleAnswer(index)}
+                    disabled={answered}
                     className={`w-full text-left px-4 py-3 rounded-xl text-[14px] font-medium transition-all cursor-pointer border ${
                       showCorrect
                         ? 'bg-[#28C840]/10 border-[#28C840]/30 text-[#28C840]'
@@ -119,12 +128,17 @@ export default function InsideJokesApp() {
                     }`}
                     whileHover={!answered ? { scale: 1.02 } : {}}
                     whileTap={!answered ? { scale: 0.98 } : {}}
-                    disabled={answered}
                   >
                     <div className="flex items-center justify-between">
                       <span>{option}</span>
-                      {showCorrect && <CheckCircle2 className="w-5 h-5" />}
-                      {showWrong && <XCircle className="w-5 h-5" />}
+
+                      {showCorrect && (
+                        <CheckCircle2 className="w-5 h-5" />
+                      )}
+
+                      {showWrong && (
+                        <XCircle className="w-5 h-5" />
+                      )}
                     </div>
                   </motion.button>
                 );
@@ -139,11 +153,22 @@ export default function InsideJokesApp() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0 }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                  transition={{
+                    type: 'spring',
+                    stiffness: 400,
+                    damping: 20,
+                  }}
                 >
-                  <p className={`text-[15px] font-semibold ${isCorrect ? 'text-[#28C840]' : 'text-[#FF5F57]'}`}>
-                    {isCorrect ? current.correctReaction : current.wrongReaction}
+                  <p
+                    className={`text-[15px] font-semibold ${
+                      isCorrect ? 'text-[#28C840]' : 'text-[#FF5F57]'
+                    }`}
+                  >
+                    {isCorrect
+                      ? current.correctReaction
+                      : current.wrongReaction}
                   </p>
+
                   <button
                     onClick={handleNext}
                     className="mt-3 inline-flex items-center gap-2 px-5 py-2 bg-[#5B8DEF] text-white rounded-full text-sm font-medium hover:bg-[#5B8DEF]/90 transition-colors cursor-pointer"
