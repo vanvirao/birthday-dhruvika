@@ -9,7 +9,7 @@ import theParty from '../../assets/music/The Weeknd - The Party & The After Part
 import darkhaast from '../../assets/music/DARKHAAST.mp3';
 import fineLine from '../../assets/music/Fine Line.mp3';
 import defenceless from '../../assets/music/Defenceless.mp3';
-import bird2 from '../../assets/music/Bird2.mp3';
+import bird2 from '../../assets/music/bird2.mp3';
 import angelsFly from '../../assets/music/Angels.mp3';
 import pp from '../../assets/music/pp.mp3';
 interface Track {
