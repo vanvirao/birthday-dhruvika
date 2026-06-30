@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, Calendar } from 'lucide-react';
+import office from '../../assets/pic1.jpeg';
 
 interface Bubble {
   id: number;
   from: 'me' | 'her';
-  text: string;
-  time?: string; // shown as a small timestamp under the bubble, optional
+  text?: string;
+  image?: string;
+  time?: string;
 }
 
 interface Exhibit {
@@ -58,34 +60,65 @@ const exhibits: Exhibit[] = [
   },
   {
     id: 2,
-    title: '[Exhibit title — e.g. "That Inside Joke, Explained to No One"]',
-    date: '[Month Year]',
-    caption: '[One line of context]',
+    title: 'The Office',
+    date: 'March 2026',
+    caption: 'JimPam Kiss Moment',
     bubbles: [
   {
     id: 1,
-    from: 'her',
-    text: '[Message text]',
-    time: '2:15 PM'
+    from: 'me',
+    image: office,
+    time: '11:01 PM'
   },
   {
     id: 2,
     from: 'me',
-    text: '[Reply text]',
-    time: '2:16 PM'
+    text: 'SCREAMING????????????????????????!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!',
+    time: '11:01 PM'
   },
   {
     id: 3,
     from: 'her',
-    text: '[Message text]',
-    time: '2:18 PM'
+    text: 'OMGGG',
+    time: '11:02 PM'
   },
   {
     id: 4,
     from: 'her',
-    text: '[Message text]',
-    time: '2:18 PM'
+    text: 'YOU REACHED CASINO NIGHTTT',
+    time: '11:02 PM'
   },
+  {
+    id: 5,
+    from: 'her',
+    text: 'im so so happy',
+    time: '11:02 PM'
+  },
+  {
+    id: 6,
+    from: 'me',
+    text: 'AAAAAAAAAAAAAAA',
+    time: '11:02 PM'
+  },
+  {
+    id: 7,
+    from: 'me',
+    text: 'THEY KISSED',
+    time: '11:02 PM'
+  },
+  {
+    id: 8,
+    from: 'her',
+    text: 'BEST KISS EVER',
+    time: '11:02 PM'
+  },
+  {
+    id: 9,
+    from: 'me',
+    text: 'I LOVE JIMPAM',
+    time: '11:02 PM'
+
+  }
 ],
   },
   {
@@ -165,17 +198,40 @@ export default function MessagesApp() {
                   className={`flex flex-col ${isMe ? 'items-end' : 'items-start'} ${prevSameSender ? 'mt-0.5' : 'mt-2'}`}
                 >
                   <div
-                    className="max-w-[72%] px-3.5 py-2 text-[13.5px] leading-snug"
-                    style={{
-                      background: isMe ? '#0B84FF' : '#E9E9EB',
-                      color: isMe ? '#FFFFFF' : '#1D1D1F',
-                      borderRadius: 18,
-                      borderBottomRightRadius: isMe && !prevSameSender ? 4 : 18,
-                      borderBottomLeftRadius: !isMe && !prevSameSender ? 4 : 18,
-                    }}
-                  >
-                    {b.text}
-                  </div>
+  className="max-w-[72%] overflow-hidden"
+  style={{
+    background: b.image
+      ? 'transparent'
+      : isMe
+      ? '#0B84FF'
+      : '#E9E9EB',
+
+    borderRadius: 18,
+  }}
+>
+  {b.image && (
+    <img
+      src={b.image}
+      alt=""
+      className="rounded-2xl max-w-full block"
+    />
+  )}
+
+  {b.text && (
+  <div
+    className="max-w-[72%] px-3.5 py-2 mt-1 text-[13.5px] leading-snug"
+    style={{
+      background: isMe ? '#0B84FF' : '#E9E9EB',
+      color: isMe ? '#FFFFFF' : '#1D1D1F',
+      borderRadius: 18,
+      borderBottomRightRadius: isMe && !prevSameSender ? 4 : 18,
+      borderBottomLeftRadius: !isMe && !prevSameSender ? 4 : 18,
+    }}
+  >
+    {b.text}
+  </div>
+)} 
+</div>
                   {b.time && (
                     <span className="text-[10px] text-[#6E6E73] mt-0.5 px-1">{b.time}</span>
                   )}
