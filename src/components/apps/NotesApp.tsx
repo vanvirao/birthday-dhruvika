@@ -12,28 +12,17 @@ interface Note {
 const notes: Note[] = [
   {
     id: 1,
-    title: '[Letter Title 1]',
-    body: '[Write the personal message here. This is where you can pour your heart out with memories, gratitude, and wishes for their special day. Make it as long and meaningful as you want.]',
+    title: 'Vanwee',
+    body: 'Happy Birthday Dhruvikaaa, Im so my leg was sprained that day and i was so late to class because i got to meet you. I dont think I would trade that for anything you honestly saved my college life. Sorry if i made you an introvert along the way though <3 ',
     date: 'Jun 18',
   },
   {
     id: 2,
-    title: '[Letter Title 2]',
+    title: 'Anu',
     body: '[Write the personal message here. Another heartfelt note, maybe about a specific shared moment, inside joke, or something only the two of you would understand.]',
     date: 'Jun 17',
   },
-  {
-    id: 3,
-    title: '[Letter Title 3]',
-    body: '[Write the personal message here. A funny story, a list of reasons why they are amazing, or predictions for the year ahead.]',
-    date: 'Jun 16',
-  },
-  {
-    id: 4,
-    title: '[Letter Title 4]',
-    body: '[Write the personal message here. The final note — maybe a poem, a quote, or just a simple "I love you" that means everything.]',
-    date: 'Jun 15',
-  },
+ 
 ];
 
 export default function NotesApp() {
