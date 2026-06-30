@@ -621,6 +621,62 @@ const exhibits: Exhibit[] = [
     }
   ]
 },
+{
+  id: 7,
+  title: 'Turt Bag',
+  date: 'March 2026',
+  caption: 'Puns.',
+  bubbles: [
+    {
+      id: 1,
+      from: 'me',
+      text: 'Turt bag lu ya sling',
+      time: '8:37 AM'
+    },
+    {
+      id: 2,
+      from: 'anu',
+      text: 'mai turt le rhi',
+      time: '8:40 AM'
+    },
+    {
+      id: 3,
+      from: 'anu',
+      text: 'i feel like stuff hai to carry',
+      time: '8:40 AM'
+    },
+    {
+      id: 4,
+      from: 'me',
+      text: 'Mai bhi leleti hu',
+      time: '8:41 AM'
+    },
+    {
+      id: 5,
+      from: 'anu',
+      text: 'yaar',
+      time: '8:44 AM'
+    },
+    {
+      id: 6,
+      from: 'anu',
+      text: 'i think ill take sling',
+      time: '8:44 AM'
+    },
+    {
+      id: 7,
+      from: 'anu',
+      text: 'bhai meri cap nahi mil rhi 😭😭😭😭',
+      time: '8:49 AM'
+    },
+    {
+      id: 8,
+      from: 'anu',
+      text: '📞 Voice call (No answer)',
+      time: '8:54 AM'
+    }
+  ]
+},
 ];
 
 export default function MessagesApp() {
