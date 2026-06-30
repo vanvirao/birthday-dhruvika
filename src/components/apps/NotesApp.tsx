@@ -13,7 +13,7 @@ const notes: Note[] = [
   {
     id: 1,
     title: 'Vanwee',
-    body: 'Happy Birthday Dhruvikaaa, Im so my leg was sprained that day and i was so late to class because i got to meet you. I dont think I would trade that for anything you honestly saved my college life. Sorry if i made you an introvert along the way though <3 ',
+    body: 'Happy Birthday Dhruvikaaa, Im so thankful my leg was sprained that day and i was so late to class the only seat left was next to you, because i got to meet you. I dont think I would trade that for anything, you honestly saved my college life. Sorry if i made you an introvert along the way though <3 😊',
     date: 'Jun 18',
   },
   {
