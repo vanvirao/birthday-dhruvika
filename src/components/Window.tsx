@@ -164,32 +164,46 @@ export default function Window({ app, onClose, onFocus, isActive, zIndex }: Wind
         >
           {/* Title bar */}
           <div
-  className="relative h-9 flex items-center px-3 shrink-0 select-none"
-  style={{
-    background: 'rgba(0,0,0,0.15)',
-    borderBottom: '1px solid var(--sky-border)',
-    cursor: isMobile || maximized ? 'default' : isDragging ? 'grabbing' : 'grab',
-  }}
-  onMouseDown={handleTitleMouseDown}
-  onDoubleClick={handleMaximize}
->
-  {/* Traffic lights */}
-  <div className="relative z-10 flex items-center gap-1.5">
-    ...
-    {/* your three buttons */}
-    ...
-  </div>
-
-  {/* Centered title */}
-  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-    <span
-      className="text-[13px] font-medium"
-      style={{ color: 'var(--sky-text-secondary)' }}
-    >
-      {app.name}
-    </span>
-  </div>
-</div>
+            className="h-9 flex items-center px-3 gap-2 select-none shrink-0"
+            style={{
+              background: 'rgba(0,0,0,0.15)',
+              borderBottom: '1px solid var(--sky-border)',
+              cursor: isMobile || maximized ? 'default' : isDragging ? 'grabbing' : 'grab',
+            }}
+            onMouseDown={handleTitleMouseDown}
+            onDoubleClick={handleMaximize}
+          >
+            <div className="flex items-center gap-1.5">
+              <button
+                onClick={(e) => { e.stopPropagation(); onClose(); }}
+                aria-label={`Close ${app.name}`}
+                className="w-3 h-3 rounded-full bg-[#FF5F57] hover:brightness-90 transition-all flex items-center justify-center group cursor-pointer"
+              >
+                <span className="text-[7px] text-black/50 opacity-0 group-hover:opacity-100 font-bold leading-none">×</span>
+              </button>
+              <button
+                onClick={handleMinimize}
+                aria-label={`Minimize ${app.name}`}
+                className="w-3 h-3 rounded-full bg-[#FFBD2E] hover:brightness-90 transition-all flex items-center justify-center group cursor-pointer"
+              >
+                <span className="text-[7px] text-black/50 opacity-0 group-hover:opacity-100 font-bold leading-none">−</span>
+              </button>
+              <button
+                onClick={handleMaximize}
+                aria-label={maximized ? `Restore ${app.name}` : `Maximize ${app.name}`}
+                className="w-3 h-3 rounded-full bg-[#28C840] hover:brightness-90 transition-all flex items-center justify-center group cursor-pointer"
+              >
+                <span className="text-[6px] text-black/50 opacity-0 group-hover:opacity-100 font-bold leading-none">
+                  {maximized ? '⤡' : '⤢'}
+                </span>
+              </button>
+            </div>
+            <div className="flex-1 text-center pr-16">
+              <span className="text-[13px] font-medium" style={{ color: 'var(--sky-text-secondary)' }}>
+                {app.name}
+              </span>
+            </div>
+          </div>
 
           {/* Content */}
           <div className="flex-1 overflow-hidden" style={{ color: 'var(--sky-text)' }}>
