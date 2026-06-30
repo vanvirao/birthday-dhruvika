@@ -10,6 +10,7 @@ import {
   Gift,
   MessageCircle,
   Terminal,
+  NotebookPen,Quote,Sparkles
 } from 'lucide-react';
 import { sound } from '../lib/sound';
 import { usePrefersReducedMotion } from '../lib/usePrefersReducedMotion';
