@@ -29,13 +29,12 @@ interface DockProps {
 
 export const apps: DockApp[] = [
   { id: 'memories', name: 'Memories',     icon: <Images          className="w-full h-full" />, color: '#C1913F' },
-  { id: 'notes',    name: 'Notes',        icon: <StickyNote      className="w-full h-full" />, color: '#11284F' },
-  { id: 'jokes',    name: 'Inside Jokes', icon: <Gamepad2        className="w-full h-full" />, color: '#8A6535' },
+  { id: 'notes',    name: 'Notes',        icon: <NotebookPen      className="w-full h-full" />, color: '#11284F' },
+  { id: 'jokes',    name: 'Inside Jokes', icon: <Quote        className="w-full h-full" />, color: '#8A6535' },
   { id: 'mixtape',  name: 'Mixtape',      icon: <Disc3           className="w-full h-full" />, color: '#1A3A6A' },
   { id: 'terminal', name: 'Terminal',     icon: <Terminal        className="w-full h-full" />, color: '#1A3A2A' },
   { id: 'messages', name: 'Messages',     icon: <MessageCircle   className="w-full h-full" />, color: '#234A7A' },
-  { id: 'wishlist', name: 'Wishlist',     icon: <Gift            className="w-full h-full" />, color: '#7A4A1A' },
-  { id: 'favorites',name: 'Favorites',    icon: <Heart           className="w-full h-full" />, color: '#9A3A2A' },
+  { id: 'wishlist', name: 'Wishlist',     icon: <Sparkles            className="w-full h-full" />, color: '#7A4A1A' },
   { id: 'settings', name: 'Settings',     icon: <Settings        className="w-full h-full" />, color: '#2A3A5A' },
 ];
 
