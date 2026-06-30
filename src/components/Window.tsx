@@ -48,7 +48,7 @@ const [rect, setRect] = useState<Rect>({
   x: 100,
   y: 80,
   width: app.id === 'memories' ? 750 : DEFAULT_WIDTH,
-  height: app.id === 'memories' ? 650 : DEFAULT_HEIGHT,
+  height: app.id === 'memories' ? 850 : DEFAULT_HEIGHT,
 });  const [maximized, setMaximized] = useState(false);
   const prevRect = useRef<Rect>(rect);
 
