@@ -195,10 +195,15 @@ export default function MemoriesApp() {
   src={selectedPhoto.src}
   alt={selectedPhoto.caption}
   style={{
-    maxHeight: '330px',
+    maxWidth: '85vw',
+    maxHeight: '75vh',
     width: 'auto',
+    height: 'auto',
     objectFit: 'contain',
+    display: 'block',
+    margin: '0 auto',
   }}
+  className="rounded-xl shadow-2xl"
 />
 
   <p className="text-white text-sm text-center mt-4 font-medium px-4">

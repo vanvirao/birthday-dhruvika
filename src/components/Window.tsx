@@ -44,8 +44,12 @@ export default function Window({ app, onClose, onFocus, isActive, zIndex }: Wind
   const minimized = checkMinimized(app.id);
   void restore; // restoring is triggered from Dock.tsx via the same shared context
 
-  const [rect, setRect] = useState<Rect>({ x: 100, y: 80, width: DEFAULT_WIDTH, height: DEFAULT_HEIGHT });
-  const [maximized, setMaximized] = useState(false);
+const [rect, setRect] = useState<Rect>({
+  x: 100,
+  y: 80,
+  width: app.id === 'memories' ? 750 : DEFAULT_WIDTH,
+  height: app.id === 'memories' ? 650 : DEFAULT_HEIGHT,
+});  const [maximized, setMaximized] = useState(false);
   const prevRect = useRef<Rect>(rect);
 
   const [isDragging, setIsDragging] = useState(false);
