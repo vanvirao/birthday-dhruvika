@@ -26,7 +26,7 @@ const FORTUNES = [
   'Cool cool cool cool cool. No doubt no doubt no doubt.',
   'Bingpot.',
   'Title of your sex tape.',
-  'Eyes closed, head first, can’t lose.',
+  'BONEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE',
   'Every time someone steps up and says who they are, the world becomes a better, more interesting place.',
   'The only thing I’m not good at is modesty. Because I’m great at it.',
   'Life is unpredictable. Not everything is in our control. But as long as you’re with the right people, you can handle anything.',

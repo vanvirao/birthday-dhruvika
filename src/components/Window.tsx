@@ -15,8 +15,8 @@ interface WindowProps {
 }
 
 const MOBILE_QUERY = '(max-width: 640px)';
-const DEFAULT_WIDTH = 750;
-const DEFAULT_HEIGHT = 850;
+const DEFAULT_WIDTH = 500;
+const DEFAULT_HEIGHT = 450;
 
 function useIsMobile() {
   const [isMobile, setIsMobile] = useState<boolean>(() =>
