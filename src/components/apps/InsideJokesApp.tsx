@@ -1,4 +1,4 @@
-import { useState } from 'react';
+ bimport { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Gamepad2, CheckCircle2, XCircle, ArrowRight } from 'lucide-react';
 
@@ -14,27 +14,36 @@ interface JokeQuestion {
 const questions: JokeQuestion[] = [
   {
     id: 1,
-    clue: '[Inside joke clue 1]',
-    options: ['[Answer option A]', '[Answer option B]', '[Answer option C]'],
+    clue: 'you want it? you like it?'
+    options: ['keep it bro', 'keeeeeeeep it bro', 'i miss my ex'],
     correctIndex: 1,
-    correctReaction: 'Nailed it! You know us too well.',
-    wrongReaction: 'Nice try, but you should know this one!',
+    correctReaction: 'you da real art',
+    wrongReaction: 'not so humble of u',
   },
   {
     id: 2,
-    clue: '[Inside joke clue 2]',
-    options: ['[Answer option A]', '[Answer option B]'],
+    clue: 'what will dhruvika be when she gets older?',
+    options: ['single rich aunt', 'married(ew)'],
     correctIndex: 0,
-    correctReaction: 'Of course you got that one!',
-    wrongReaction: 'Hmm, did you forget our deal?',
+    correctReaction: 'YAYYY fuck shaurya',
+    wrongReaction: 'eweweweweweweweweweweweweew',
   },
   {
     id: 3,
-    clue: '[Inside joke clue 3]',
-    options: ['[Answer option A]', '[Answer option B]', '[Answer option C]'],
+    clue: 'vanvis favourite ship-',
+    options: ['harry potter and draco malfoy', 'dhruvika and mudit', 'laung laachi'],
     correctIndex: 2,
-    correctReaction: 'Legendary! You remembered the best one.',
-    wrongReaction: 'That was not the right one... awkward!',
+    correctReaction: 'vanvi is lame right?',
+    wrongReaction: 'ehhh wrong',
+  },
+
+  {
+    id: 5,
+    clue: 'dhruvika say it',
+    options: ['i love my mumma :(', 'tototoday', 'faaalllll'],
+    correctIndex: 0,
+    correctReaction: 'good girl',
+    wrongReaction: 'count your days',
   },
 ];
 
