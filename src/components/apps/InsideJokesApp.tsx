@@ -38,7 +38,7 @@ const questions: JokeQuestion[] = [
   },
 
   {
-    id: 5,
+    id: 4,
     clue: 'dhruvika say it',
     options: ['i love my mumma :(', 'tototoday', 'faaalllll'],
     correctIndex: 0,
