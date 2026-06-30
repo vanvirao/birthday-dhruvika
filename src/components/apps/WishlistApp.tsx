@@ -10,11 +10,11 @@ interface WishItem {
 }
 
 const initialWishes: WishItem[] = [
-  { id: 1,  text: '[Wish #1]',  note: '[A short note or detail about this one]', checked: false },
-  { id: 2,  text: '[Wish #2]',  note: '',                                         checked: false },
-  { id: 3,  text: '[Wish #3]',  note: '[A short note or detail about this one]', checked: false },
-  { id: 4,  text: '[Wish #4]',  note: '',                                         checked: false },
-  { id: 5,  text: '[Wish #5]',  note: '[A short note or detail about this one]', checked: false },
+  { id: 1,  text: 'Paris in Rain',  note: 'Well we tried to bring it you so I think you can check this off honestly', checked: false },
+  { id: 2,  text: 'Pink Sauce Pasta',  note: '',                                         checked: false },
+  { id: 3,  text: 'Mercedes',  note: 'Dont listen to vanwee get it', checked: false },
+  { id: 4,  text: 'A punjabi munda',  note: '',                                         checked: false },
+  { id: 5,  text: 'A one direction reunion',  note: 'pls god', checked: false },
   { id: 6,  text: '[Wish #6]',  note: '',                                         checked: false },
   { id: 7,  text: '[Wish #7]',  note: '[A short note or detail about this one]', checked: false },
   { id: 8,  text: '[Wish #8]',  note: '',                                         checked: false },
