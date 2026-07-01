@@ -111,22 +111,38 @@ function WishRow({ item, onToggle }: { item: WishItem; onToggle: (id: number) =>
       </div>
 
       {/* Text */}
-      <div className="min-w-0 flex-1">
-        <p
-          className="text-[14px] font-medium leading-snug transition-colors"
-          style={{
-            color: item.checked ? 'var(--sky-text-secondary)' : 'var(--sky-text)',
-            textDecoration: item.checked ? 'line-through' : 'none',
-          }}
-        >
-          {item.text}
-        </p>
-        {item.note && !item.checked && (
-          <p className="text-[12px] mt-0.5" style={{ color: 'var(--sky-text-secondary)' }}>
-            {item.note}
-          </p>
-        )}
-      </div>
+      {/* Content */}
+<div className="min-w-0 flex-1">
+
+  {item.image && (
+    <img
+      src={item.image}
+      alt={item.text ?? 'Wishlist image'}
+      className="w-36 rounded-xl object-cover mb-2"
+    />
+  )}
+
+  {item.text && (
+    <p
+      className="text-[14px] font-medium leading-snug transition-colors"
+      style={{
+        color: item.checked ? 'var(--sky-text-secondary)' : 'var(--sky-text)',
+        textDecoration: item.checked ? 'line-through' : 'none',
+      }}
+    >
+      {item.text}
+    </p>
+  )}
+
+  {item.note && !item.checked && (
+    <p
+      className="text-[12px] mt-0.5"
+      style={{ color: 'var(--sky-text-secondary)' }}
+    >
+      {item.note}
+    </p>
+  )}
+</div>
     </motion.div>
   );
 }
