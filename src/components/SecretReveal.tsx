@@ -2,8 +2,8 @@ import { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSecretReveal } from '../lib/SecretRevealContext';
 import { usePrefersReducedMotion } from '../lib/usePrefersReducedMotion';
-import revealPhoto from '../assets/pic1.jpeg';
-import revealSong from '../assets/music/Conan Gray - Astronomy.mp3';
+import revealPhoto from '../assets/sardar.jpg';
+import revealSong from '../assets/music/kangna_tera.mp3';
 
 export default function SecretReveal() {
   const { state, close, minimize, restore } = useSecretReveal();
