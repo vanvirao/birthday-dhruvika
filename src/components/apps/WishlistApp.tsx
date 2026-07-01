@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Gift, Check } from 'lucide-react';
-import monkeys from '../../assets/pic3.jpeg';
+import monkeys from '../../assets/pic3.jpg';
 
 interface WishItem {
   id: number;
