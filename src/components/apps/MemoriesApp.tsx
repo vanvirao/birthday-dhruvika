@@ -42,12 +42,12 @@ const photos: Photo[] = [
   { id: 11, src: photo11, caption: 'lohri XD' },
   { id: 12, src: photo12, caption: 'our moon looking for moon' },
   { id: 13, src: photo13, caption: 'bebot dhruvika' },
-  { id: 14, src: photo14, caption: 'day i couldnt pretend that i fainted' },
+  { id: 14, src: photo14, caption: 'day anu couldnt pretend that she fainted' },
   { id: 15, src: photo15, caption: 'opening club <3' },
   { id: 16, src: photo16, caption: 'vijaylaxmi giving us an orgasm' },
   { id: 17, src: photo17, caption: '"i had the craziest dreammm"' },
   { id: 18, src: photo18, caption: 'dum dums' },
-  { id: 19, src: photo19, caption: 'thank you for introducing me to that one tricolored coffee' },
+  { id: 19, src: photo19, caption: 'thank you for introducing me to that one tricolored coffee - anu' },
 ];
 
 // Draws the photo + a white polaroid border + caption onto an offscreen
