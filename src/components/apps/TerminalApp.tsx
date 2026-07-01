@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, useCallback, KeyboardEvent } from 'react';
 import { useTheme } from '../../lib/ThemeContext';
 import { useCelestial } from '../../lib/CelestialContext';
+import { useSecretReveal } from '../../lib/SecretRevealContext';
 
 // ── Moon phase calculation ────────────────────────────────────────────────
 function getMoonPhase(): string {
@@ -81,6 +82,7 @@ const WELCOME_LINES: OutputLine[] = [
 export default function TerminalApp() {
   const { theme } = useTheme();
   const { recordTerminalAlign } = useCelestial();
+  const { open: openSecretReveal } = useSecretReveal();
   const [lines, setLines]     = useState<OutputLine[]>(WELCOME_LINES);
   const [input, setInput]     = useState('');
   const [history, setHistory] = useState<string[]>([]);
@@ -111,6 +113,16 @@ export default function TerminalApp() {
     let response: OutputLine[];
 
     switch (cmd) {
+
+        case 'pinksauce509':
+  openSecretReveal();
+  response = [
+    makeLine('output', ''),
+    makeLine('output', '  decrypting...'),
+    makeLine('output', '  access granted.'),
+    makeLine('output', ''),
+  ];
+  break;
       case 'help':
         response = HELP_TEXT.split('\n').map((l) => makeLine('output', l));
         break;
