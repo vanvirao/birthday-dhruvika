@@ -118,11 +118,21 @@ export function CelebrationOverlay({ open, onClose }: CelebrationOverlayProps) {
             <h2 className="text-4xl sm:text-5xl font-bold tracking-tight drop-shadow-lg" style={{ color: 'var(--sky-text)' }}>
               Happy Birthday dhruvikaaa!
             </h2>
-            <p className="text-base sm:text-lg mt-4 leading-relaxed font-light drop-shadow" style={{ color: 'var(--sky-text-secondary)' }}>
-              "I wish there was a way to know you're in the good old days before you've actually left them." ~Nard Dog
-              
-              "Life is unpredictable. Not everything is in our control. But as long as we're with the right people, we can handle anything." ~Amy Santiago
-            </p>
+            <div className="mt-6 space-y-6">
+  <p className="text-base sm:text-lg leading-relaxed font-light drop-shadow"
+     style={{ color: 'var(--sky-text-secondary)' }}>
+    "I wish there was a way to know you're in the good old days before you've actually left them."
+    <br />
+    <span className="italic">~ Nard Dog</span>
+  </p>
+
+  <p className="text-base sm:text-lg leading-relaxed font-light drop-shadow"
+     style={{ color: 'var(--sky-text-secondary)' }}>
+    "Life is unpredictable. Not everything is in our control. But as long as we're with the right people, we can handle anything."
+    <br />
+    <span className="italic">~ Amy Santiago</span>
+  </p>
+</div>
             <button
               onClick={onClose}
               className="mt-8 inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold cursor-pointer transition-opacity hover:opacity-80"
