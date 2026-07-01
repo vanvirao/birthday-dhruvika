@@ -18,8 +18,8 @@ const initialWishes: WishItem[] = [
   { id: 4,  text: 'A punjabi munda',  note: '',                                         checked: false },
   { id: 5,  text: 'A one direction reunion',  note: 'pls god', checked: false },
   { id: 6,  text: 'Iced Americano Latte',  note: '',                                         checked: false },
-  { id: 7,  text: '[Wish #7]',  note: '[A short note or detail about this one]', checked: false },
-  { id: 8,  image: monkeys,  note: '',checked: false },
+  { id: 7,  text: 'unlimited supply of chole bhature',  note: 'skp kind', checked: false },
+  { id: 8,  image: monkeys,  note: 'us',checked: false },
 ];
 
 export default function WishlistApp() {
