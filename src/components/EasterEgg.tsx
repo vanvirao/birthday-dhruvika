@@ -116,10 +116,12 @@ export function CelebrationOverlay({ open, onClose }: CelebrationOverlayProps) {
               <Star className="w-8 h-8" style={{ color: 'var(--sky-deep)' }} strokeWidth={1.8} fill="currentColor" />
             </div>
             <h2 className="text-4xl sm:text-5xl font-bold tracking-tight drop-shadow-lg" style={{ color: 'var(--sky-text)' }}>
-              Happy Birthday!
+              Happy Birthday dhruvikaaa!
             </h2>
             <p className="text-base sm:text-lg mt-4 leading-relaxed font-light drop-shadow" style={{ color: 'var(--sky-text-secondary)' }}>
-              You found the secret — the moon was always watching over you, Dhruvika.
+              "I wish there was a way to know you're in the good old days before you've actually left them." ~Nard Dog
+              
+              "Life is unpredictable. Not everything is in our control. But as long as we're with the right people, we can handle anything." ~Amy Santiago
             </p>
             <button
               onClick={onClose}
