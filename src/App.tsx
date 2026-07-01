@@ -113,6 +113,7 @@ function AppInner() {
           <Dock onOpenApp={openWindow} openAppIds={openWindows.map((w) => w.app.id)} />
         )}
         {desktopReady && <EasterEgg />}
+        <SecretReveal />
         <NotificationSystem active={desktopReady} onOpenApp={openAppById} />
         <AuroraMessage />
         <Screensaver active={desktopReady && isIdle} />
@@ -124,7 +125,9 @@ function AppInner() {
 function App() {
   return (
     <CelestialProvider>
-      <AppInner />
+      <SecretRevealProvider>
+        <AppInner />
+      </SecretRevealProvider>
     </CelestialProvider>
   );
 }
