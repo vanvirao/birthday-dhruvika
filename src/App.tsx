@@ -13,6 +13,8 @@ import { useIdle } from './lib/useIdle';
 import { CelestialProvider, useCelestial } from './lib/CelestialContext';
 import type { DockApp } from './components/Dock';
 import { apps } from './components/Dock';
+import SecretReveal from './components/SecretReveal';
+import { SecretRevealProvider } from './lib/SecretRevealContext';
 
 type AppState = 'boot' | 'login' | 'desktop';
 
