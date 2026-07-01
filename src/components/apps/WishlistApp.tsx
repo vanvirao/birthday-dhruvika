@@ -15,7 +15,7 @@ const initialWishes: WishItem[] = [
   { id: 3,  text: 'Mercedes',  note: 'Dont listen to vanwee get it', checked: false },
   { id: 4,  text: 'A punjabi munda',  note: '',                                         checked: false },
   { id: 5,  text: 'A one direction reunion',  note: 'pls god', checked: false },
-  { id: 6,  text: '[Wish #6]',  note: '',                                         checked: false },
+  { id: 6,  text: 'Iced Americano Latte',  note: '',                                         checked: false },
   { id: 7,  text: '[Wish #7]',  note: '[A short note or detail about this one]', checked: false },
   { id: 8,  text: '[Wish #8]',  note: '',                                         checked: false },
 ];
