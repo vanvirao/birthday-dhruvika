@@ -19,7 +19,7 @@ const notes: Note[] = [
   {
     id: 2,
     title: 'Anu',
-    body: '[Write the personal message here. Another heartfelt note, maybe about a specific shared moment, inside joke, or something only the two of you would understand.]',
+    body: 'it is your birthday. get it? the office? anyway, HAPPY BIRTHDAY! i cannot really put into words what you mean to us. you taught me how to love, and i personally i believe you are the embodiment of love itself. you are so bright and positive, do not let anyone take that away from you. i aspire to be like you one day, and i love you so so much. i am also glad i had got my period that one wednesday and asked you for a pad. happy birthday, my padman <33 ',
     date: 'Jun 17',
   },
  
