@@ -1,23 +1,25 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Gift, Check } from 'lucide-react';
+import monkeys from '../../assets/pic3.jpeg';
 
 interface WishItem {
   id: number;
-  text: string;
+  text?: string;
   note?: string;
+  image?: string;
   checked: boolean;
 }
 
 const initialWishes: WishItem[] = [
   { id: 1,  text: 'Paris in Rain',  note: 'Well we tried to bring it you so I think you can check this off honestly', checked: false },
-  { id: 2,  text: 'Pink Sauce Pasta',  note: '',                                         checked: false },
+  { id: 2,  text: 'Pink Sauce Pasta',  note: '', checked: false },
   { id: 3,  text: 'Mercedes',  note: 'Dont listen to vanwee get it', checked: false },
   { id: 4,  text: 'A punjabi munda',  note: '',                                         checked: false },
   { id: 5,  text: 'A one direction reunion',  note: 'pls god', checked: false },
   { id: 6,  text: 'Iced Americano Latte',  note: '',                                         checked: false },
   { id: 7,  text: '[Wish #7]',  note: '[A short note or detail about this one]', checked: false },
-  { id: 8,  text: '[Wish #8]',  note: '',                                         checked: false },
+  { id: 8,  image: monkeys,  note: '',checked: false },
 ];
 
 export default function WishlistApp() {
